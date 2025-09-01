@@ -1,0 +1,12 @@
+{
+  "src": [
+    "pages/ChooseGenderPage",
+    "pages/MenuPage",
+    "pages/PerfumePage",
+    "pages/PerfumeDetailPage",
+    "pages/SplashPage",
+    "pages/HomePage",
+    "pages/PerfumeOfTheDayPage",
+    "pages/FavoritesPage"
+  ]
+}
