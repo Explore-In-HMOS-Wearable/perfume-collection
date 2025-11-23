@@ -1,0 +1,39 @@
+{
+  "routerMap": [
+    {
+      "name": "HomePage",
+      "pageSourceFile": "src/main/ets/pages/HomePage.ets",
+      "buildFunction": "HomePageBuilder"
+    },
+    {
+      "name": "FavoritesPage",
+      "pageSourceFile": "src/main/ets/pages/FavoritesPage.ets",
+      "buildFunction": "FavoritesPageBuilder"
+    },
+    {
+      "name": "PerfumeOfTheDayPage",
+      "pageSourceFile": "src/main/ets/pages/PerfumeOfTheDayPage.ets",
+      "buildFunction": "PerfumeOfTheDayPageBuilder"
+    },
+    {
+      "name": "ChooseGenderPage",
+      "pageSourceFile": "src/main/ets/pages/ChooseGenderPage.ets",
+      "buildFunction": "ChooseGenderPageBuilder"
+    },
+    {
+      "name": "PerfumePage",
+      "pageSourceFile": "src/main/ets/pages/PerfumePage.ets",
+      "buildFunction": "PerfumePageBuilder"
+    },
+    {
+      "name": "MenuPage",
+      "pageSourceFile": "src/main/ets/pages/MenuPage.ets",
+      "buildFunction": "MenuPageBuilder"
+    },
+    {
+      "name": "PerfumeDetailPage",
+      "pageSourceFile": "src/main/ets/pages/PerfumeDetailPage.ets",
+      "buildFunction": "PerfumeDetailPageBuilder"
+    }
+  ]
+}

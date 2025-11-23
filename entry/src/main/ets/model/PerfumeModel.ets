@@ -24,16 +24,11 @@ export const dummyPerfume: Perfume[] = [
     category: 'Unisex',
     description: 'Bursting with radiant energy, Citrus Muse is a lively symphony of juicy grapefruit, tangy lime zest, and a splash of sun-kissed mandarin. This invigorating blend awakens your senses with an immediate burst of vibrant freshness, reminiscent of a bright summer morning. As the citrus notes unfold, they reveal a playful yet refined character—perfect for those who embrace life with spontaneity and joy. Crisp, clean, and undeniably uplifting, Citrus Muse is a modern celebration of zestful charm and effervescent spirit, leaving a refreshing trail that lingers throughout the day.'
   },
-  {
-    name: 'Midnight Ember',
-    image: $r('app.media.dummyperfume4'),
-    category: 'Night',
-    description: 'Midnight Ember combines smoky incense, patchouli, and a touch of cinnamon.'
-  },
-  {
-    name: 'Autumn Whisper',
-    image: $r('app.media.dummyperfume5'),
-    category: 'Seasonal',
-    description: 'Inspired by the serene beauty of crisp fall evenings, Autumn Whisper is a delicate composition that captures the quiet magic of the season. A harmonious blend of dry woods and golden amber forms the warm heart of the fragrance, while a gentle hint of sage adds a touch of aromatic freshness. The scent evokes the rustle of leaves underfoot, the golden light of early twilight, and the comforting stillness in the air. Subtle yet soulful, Autumn Whisper is an earthy, nostalgic fragrance that wraps you in calm and reflection—perfect for those who find beauty in the changing seasons.'
-  },
 ]
+
+export const defaultPerfume: Perfume = {
+  name: '',
+  image: $r('app.media.dummyperfume1'),
+  category: '',
+  description: ''
+};

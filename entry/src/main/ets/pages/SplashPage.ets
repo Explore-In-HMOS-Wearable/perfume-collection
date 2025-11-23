@@ -1,13 +1,13 @@
-import { router, curves } from '@kit.ArkUI';
+import { curves } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct SplashPage {
-
   private timerId = 0;
   @State planeOffsetX: number = -400;
   @State planeOffsetY: number = 350;
   @State earthTranslateY: number = 300;
+  @Provide('mainStack') pathStack: NavPathStack = new NavPathStack()
 
   aboutToAppear() {
     setTimeout(() => {
@@ -15,8 +15,8 @@ struct SplashPage {
     }, 100);
 
     this.timerId = setTimeout(() => {
-      router.replaceUrl({
-        url: 'pages/HomePage',
+      this.pathStack.pushPath({
+        name: 'HomePage'
       });
     }, 2000);
   }
@@ -41,25 +41,28 @@ struct SplashPage {
   }
 
   build() {
-    Stack() {
-      Column() {
-        Image($r('app.media.splash'))
-          .width(150)
-          .height(150)
-          .translate({ y: this.earthTranslateY })
-          .animation({
-            curve: curves.initCurve(),
-            iterations: 1,
-            duration: 500,
-            playMode: PlayMode.Alternate,
-          })
-          .onAppear(() => {
-            this.earthTranslateY = 10;
-          })
+    Navigation(this.pathStack) {
+      Stack() {
+        Column() {
+          Image($r("app.media.splash"))
+            .width(120)
+            .height(80)
+            .translate({ y: this.earthTranslateY })
+            .animation({
+              curve: curves.initCurve(),
+              iterations: 1,
+              duration: 500,
+              playMode: PlayMode.Alternate,
+            })
+            .onAppear(() => {
+              this.earthTranslateY = 10;
+            })
+        }
       }
+      .width('100%')
+      .height('100%')
+      .backgroundColor(Color.Black)
     }
-    .width('100%')
-    .height('100%')
-    .backgroundColor(Color.Black)
+    .hideTitleBar(true)
   }
 }

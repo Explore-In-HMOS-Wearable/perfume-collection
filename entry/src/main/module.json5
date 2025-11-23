@@ -45,6 +45,7 @@
           }
         ],
       }
-    ]
+    ],
+    "routerMap": "$profile:route_map"
   }
 }
