@@ -43,9 +43,8 @@
             "name": "ohos.extension.backup",
             "resource": "$profile:backup_config"
           }
-        ],
+        ]
       }
-    ],
-    "routerMap": "$profile:route_map"
+    ]
   }
 }

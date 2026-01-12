@@ -1,4 +1,5 @@
 import { dummyPerfume, Perfume } from '../model/PerfumeModel';
+import {cryptoFramework} from '@kit.CryptoArchitectureKit';
 
 @Builder
 export function HomePageBuilder() {
@@ -22,7 +23,7 @@ struct HomePage {
             .width('100%')
             .backgroundColor('#ff8c7b2f')
             .onClick(() => {
-              const randomIndex = Math.floor(Math.random() * dummyPerfume.length);
+              const randomIndex = Math.floor(secureRandomNumber() * dummyPerfume.length);
               this.selectedPerfume = dummyPerfume[randomIndex];
               this.pathStack.pushPath({
                 name: 'PerfumeOfTheDayPage',
@@ -31,7 +32,7 @@ struct HomePage {
                   name: this.selectedPerfume.name,
                   image: this.selectedPerfume.image,
                   category: this.selectedPerfume.category,
-                  description: this.selectedPerfume.description,
+                  description: this.selectedPerfume.description
                 } as Perfume
               })
             })
@@ -75,4 +76,25 @@ struct HomePage {
     }
     .hideBackButton(true)
   }
+}
+
+/**
+ * Generates a secure random number between 0 (inclusive) and 1 (exclusive)
+ * using synchronous crypto operations.
+ * @returns A random number between 0 and 1
+ */
+export function secureRandomNumber(): number {
+  const rand = cryptoFramework.createRandom();
+  const len = 8; // 8 bytes (64 bits)
+  const randData = rand.generateRandomSync(len);
+  const bytes = randData.data;
+  let bigIntValue = BigInt(0);
+  // Combine all 64 bits into a BigInt
+  for (let i = 0; i < 8; i++) {
+    bigIntValue = (bigIntValue << BigInt(8)) | BigInt(bytes[i]);
+  }
+  // Take the upper 53 bits for full floating-point precision
+  const maxSafeValue = BigInt(1) << BigInt(53); // 2^53
+  const normalizedValue = Number(bigIntValue >> BigInt(11)) / Number(maxSafeValue);
+  return normalizedValue;
 }

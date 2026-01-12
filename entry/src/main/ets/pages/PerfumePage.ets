@@ -12,7 +12,7 @@ export function PerfumePageBuilder() {
 @Component
 struct PerfumePage {
   scroller: Scroller = new Scroller()
-  @State searchInput: string = '';
+  searchInput: string = '';
   @State filteredPlacesList: Array<Perfume> = []
   private viewModel: PerfumeViewModel = new PerfumeViewModel();
   @Consume('mainStack') pathStack: NavPathStack;
@@ -52,7 +52,7 @@ struct PerfumePage {
                       name: menuItem.name,
                       image: menuItem.image,
                       category: menuItem.category,
-                      description: menuItem.description,
+                      description: menuItem.description
                     } as Perfume
                   })
                 })

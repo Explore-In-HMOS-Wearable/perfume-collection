@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.perfumecollection",
+    "bundleName": "com.hmosdemos.wearable.perfume_collection",
     "vendor": "hmosdemos",
     "versionCode": 1000000,
     "versionName": "1.0.0",

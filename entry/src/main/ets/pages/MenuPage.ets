@@ -14,18 +14,18 @@ struct MenuPage {
     NavDestination() {
       Column() {
 
-        ButtonComponent({ title: 'Perfume', background_color: '#ff8c7b2f' })
+        ButtonComponent({ title: 'Perfume', backgroundCol: '#ff8c7b2f' })
           .onClick(() => {
             this.pathStack.pushPathByName('PerfumePage', null)
           })
-        ButtonComponent({ title: 'Deodorant', background_color: '#ff8c7b2f' })
+        ButtonComponent({ title: 'Deodorant', backgroundCol: '#ff8c7b2f' })
           .onClick(() => {
             this.pathStack.pushPathByName('PerfumePage', null)
           })
           .onClick(() => {
             this.pathStack.pushPathByName('PerfumePage', null)
           })
-        ButtonComponent({ title: 'Air Freshener', background_color: '#ff8c7b2f' })
+        ButtonComponent({ title: 'Air Freshener', backgroundCol: '#ff8c7b2f' })
           .onClick(() => {
             this.pathStack.pushPathByName('PerfumePage', null)
           })

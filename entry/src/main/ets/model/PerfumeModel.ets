@@ -1,3 +1,4 @@
+
 export interface Perfume {
   name: string;
   image: Resource;
@@ -23,7 +24,7 @@ export const dummyPerfume: Perfume[] = [
     image: $r('app.media.dummyperfume3'),
     category: 'Unisex',
     description: 'Bursting with radiant energy, Citrus Muse is a lively symphony of juicy grapefruit, tangy lime zest, and a splash of sun-kissed mandarin. This invigorating blend awakens your senses with an immediate burst of vibrant freshness, reminiscent of a bright summer morning. As the citrus notes unfold, they reveal a playful yet refined character—perfect for those who embrace life with spontaneity and joy. Crisp, clean, and undeniably uplifting, Citrus Muse is a modern celebration of zestful charm and effervescent spirit, leaving a refreshing trail that lingers throughout the day.'
-  },
+  }
 ]
 
 export const defaultPerfume: Perfume = {

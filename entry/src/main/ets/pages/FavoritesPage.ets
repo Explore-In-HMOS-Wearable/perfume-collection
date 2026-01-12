@@ -7,7 +7,7 @@ export function FavoritesPageBuilder() {
 @Component
 struct FavoritesPage {
   @State favImage: ResourceStr = $r('app.media.full_fav');
-  @State isFavorite: boolean = true
+  isFavorite: boolean = true
   @Consume('mainStack') pathStack: NavPathStack;
 
   build() {

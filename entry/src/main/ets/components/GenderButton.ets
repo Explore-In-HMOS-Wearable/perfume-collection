@@ -12,7 +12,7 @@ export struct GenderButton {
         .width(16)
         .height(16)
         .margin(10)
-      ButtonComponent({ title: this.title, background_color: this.backgroundCol })
+      ButtonComponent({ title: this.title, backgroundCol: this.backgroundCol })
     }
     .backgroundColor(this.backgroundCol)
     .borderRadius(50)

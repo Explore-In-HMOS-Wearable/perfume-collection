@@ -1,4 +1,4 @@
-> **Note:** To access all shared projects, get information about environment setup, and view other guides, please visit [Explore-In-HMOS-Wearable Index](https://github.com/Explore-In-HMOS-Wearable/hmos-index).
+> **Note:** To access all shared projects, get information about environment setup, and view other guides, please visit 
 
 # Perfume Collection
 
@@ -8,10 +8,10 @@ collection.
 # Preview
 
 <div>
-   <img src="./screenshots/HomePage.png" width="24%"/>
-   <img src="./screenshots/PerfumePage.png" width="24%"/>
-   <img src="./screenshots/PerfumeDetail.png" width="24%"/>
-   <img src="./screenshots/PerfumeOfTheDayPage.png" width="24%"/>
+<img src="./screenshots/HomePage.png" width="24%"/>
+<img src="./screenshots/PerfumePage.png" width="24%"/>
+<img src="./screenshots/PerfumeDetail.png" width="24%"/>
+<img src="./screenshots/PerfumeOfTheDayPage.png" width="24%"/>
 </div>
 
 # Use Cases
@@ -71,5 +71,3 @@ entry/src/main/ets/
 
 PerfumeCollection is distributed under the terms of the MIT License
 See the [LICENSE](./LICENSE) for more information.
-
-
