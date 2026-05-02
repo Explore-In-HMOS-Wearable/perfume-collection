@@ -1,4 +1,4 @@
-import { ButtonComponent } from '../components/ButtonComponent'
+import { RouteNames } from '../constants/RouteNames';
 
 @Builder
 export function MenuPageBuilder() {
@@ -10,31 +10,16 @@ export function MenuPageBuilder() {
 struct MenuPage {
   @Consume('mainStack') pathStack: NavPathStack;
 
+  aboutToAppear(): void {
+    this.pathStack.replacePathByName(RouteNames.CHOOSE_GENDER_PAGE, null);
+  }
+
   build() {
     NavDestination() {
-      Column() {
-
-        ButtonComponent({ title: 'Perfume', backgroundCol: '#ff8c7b2f' })
-          .onClick(() => {
-            this.pathStack.pushPathByName('PerfumePage', null)
-          })
-        ButtonComponent({ title: 'Deodorant', backgroundCol: '#ff8c7b2f' })
-          .onClick(() => {
-            this.pathStack.pushPathByName('PerfumePage', null)
-          })
-          .onClick(() => {
-            this.pathStack.pushPathByName('PerfumePage', null)
-          })
-        ButtonComponent({ title: 'Air Freshener', backgroundCol: '#ff8c7b2f' })
-          .onClick(() => {
-            this.pathStack.pushPathByName('PerfumePage', null)
-          })
-
-      }
-      .width('100%')
-      .height('100%')
-      .justifyContent(FlexAlign.Center)
-      .backgroundColor('#ffd4c890')
+      Column()
+        .width('100%')
+        .height('100%')
+        .backgroundColor($r('app.color.page_background'))
     }
     .hideBackButton(true)
   }

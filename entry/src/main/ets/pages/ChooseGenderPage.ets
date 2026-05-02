@@ -1,4 +1,13 @@
-import { GenderButton } from '../components/GenderButton'
+import {
+  ArcButton,
+  ArcButtonOptions,
+  ArcButtonStyleMode,
+  ArcButtonPosition,
+  LengthMetrics,
+  LengthUnit,
+  ColorMetrics
+} from '@kit.ArkUI';
+import { RouteNames } from '../constants/RouteNames';
 
 @Builder
 export function ChooseGenderPageBuilder() {
@@ -12,25 +21,47 @@ struct ChooseGenderPage {
 
   build() {
     NavDestination() {
-
-      Column() {
-
-        GenderButton({ image: $r('app.media.female'), title: 'WOMAN', backgroundCol: '#ff8c7b2f' })
-          .onClick(() => {
-            this.pathStack.pushPathByName('PerfumePage', null)
+      RelativeContainer() {
+        ArcButton({
+          options: new ArcButtonOptions({
+            label: $r('app.string.woman'),
+            position: ArcButtonPosition.TOP_EDGE,
+            styleMode: ArcButtonStyleMode.CUSTOM,
+            backgroundColor: ColorMetrics.resourceColor($r('app.color.button_background')),
+            fontColor: ColorMetrics.resourceColor($r('app.color.text_on_dark')),
+            fontSize: new LengthMetrics(17, LengthUnit.FP),
+            onClick: () => {
+              this.pathStack.pushPathByName(RouteNames.PERFUME_PAGE, null);
+            }
+          })
+        })
+          .alignRules({
+            top: { anchor: '__container__', align: VerticalAlign.Top },
+            middle: { anchor: '__container__', align: HorizontalAlign.Center }
           })
 
-        GenderButton({ image: $r('app.media.male'), title: 'MAN', backgroundCol: '#ff8c7b2f' })
-          .onClick(() => {
-            this.pathStack.pushPathByName('MenuPage', null)
+        ArcButton({
+          options: new ArcButtonOptions({
+            label: $r('app.string.man'),
+            position: ArcButtonPosition.BOTTOM_EDGE,
+            styleMode: ArcButtonStyleMode.CUSTOM,
+            backgroundColor: ColorMetrics.resourceColor($r('app.color.button_background')),
+            fontColor: ColorMetrics.resourceColor($r('app.color.text_on_dark')),
+            fontSize: new LengthMetrics(17, LengthUnit.FP),
+            onClick: () => {
+              this.pathStack.pushPathByName(RouteNames.PERFUME_PAGE, null);
+            }
+          })
+        })
+          .alignRules({
+            bottom: { anchor: '__container__', align: VerticalAlign.Bottom },
+            middle: { anchor: '__container__', align: HorizontalAlign.Center }
           })
       }
       .width('100%')
       .height('100%')
-      .justifyContent(FlexAlign.Center)
-      .backgroundColor('#ffd4c890')
+      .backgroundColor($r('app.color.page_background'))
     }
     .hideBackButton(true)
-
   }
 }

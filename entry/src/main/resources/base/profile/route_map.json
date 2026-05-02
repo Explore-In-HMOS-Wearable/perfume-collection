@@ -26,11 +26,6 @@
       "buildFunction": "PerfumePageBuilder"
     },
     {
-      "name": "MenuPage",
-      "pageSourceFile": "src/main/ets/pages/MenuPage.ets",
-      "buildFunction": "MenuPageBuilder"
-    },
-    {
       "name": "PerfumeDetailPage",
       "pageSourceFile": "src/main/ets/pages/PerfumeDetailPage.ets",
       "buildFunction": "PerfumeDetailPageBuilder"

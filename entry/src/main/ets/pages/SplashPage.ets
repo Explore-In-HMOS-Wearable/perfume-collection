@@ -1,66 +1,51 @@
 import { curves } from '@kit.ArkUI';
+import { RouteNames } from '../constants/RouteNames';
+import { AppConstants } from '../constants/AppConstants';
 import { HomePageBuilder } from './HomePage';
 import { MenuPageBuilder } from './MenuPage';
+import { ChooseGenderPageBuilder } from './ChooseGenderPage';
 import { PerfumePageBuilder } from './PerfumePage';
 import { PerfumeDetailPageBuilder } from './PerfumeDetailPage';
 import { PerfumeOfTheDayPageBuilder } from './PerfumeOfTheDayPage';
-import { ChooseGenderPageBuilder } from './ChooseGenderPage';
 import { FavoritesPageBuilder } from './FavoritesPage';
 
 @Entry
 @Component
 struct SplashPage {
-  private timerId = 0;
-  planeOffsetX: number = -400;
-  planeOffsetY: number = 350;
+  private timerId: number = 0;
   @State earthTranslateY: number = 300;
-  @Provide('mainStack') pathStack: NavPathStack = new NavPathStack()
-  uiContext: UIContext | undefined = undefined;
+  @Provide('mainStack') pathStack: NavPathStack = new NavPathStack();
 
   @Builder
   pageMap(name: string) {
-    if (name === 'HomePage') {
+    if (name === RouteNames.HOME_PAGE) {
       HomePageBuilder();
-    } else if (name === 'MenuPage') {
+    } else if (name === RouteNames.MENU_PAGE) {
       MenuPageBuilder();
-    } else if (name === 'PerfumePage') {
-      PerfumePageBuilder();
-    } else if (name === 'PerfumeDetailPage') {
-      PerfumeDetailPageBuilder();
-    } else if (name === 'PerfumeOfTheDayPage') {
-      PerfumeOfTheDayPageBuilder();
-    } else if (name === 'ChooseGenderPage') {
+    } else if (name === RouteNames.CHOOSE_GENDER_PAGE) {
       ChooseGenderPageBuilder();
-    } else if (name === 'FavoritesPage') {
+    } else if (name === RouteNames.PERFUME_PAGE) {
+      PerfumePageBuilder();
+    } else if (name === RouteNames.PERFUME_DETAIL_PAGE) {
+      PerfumeDetailPageBuilder();
+    } else if (name === RouteNames.PERFUME_OF_THE_DAY_PAGE) {
+      PerfumeOfTheDayPageBuilder();
+    } else if (name === RouteNames.FAVORITES_PAGE) {
       FavoritesPageBuilder();
     } else {
-      NavDestination() { Text(`Unknown route: ${name}`).fontColor(Color.White) }
+      NavDestination() {
+        Text($r('app.string.unknown_route'))
+          .fontColor($r('app.color.text_on_dark'))
+      }
     }
   }
 
   aboutToAppear() {
-    setTimeout(() => {
-      this.startPlaneAnimation();
-    }, 100);
-
     this.timerId = setTimeout(() => {
       this.pathStack.pushPath({
-        name: 'HomePage'
+        name: RouteNames.HOME_PAGE
       });
-    }, 2000);
-  }
-
-  startPlaneAnimation() {
-    this.uiContext?.animateTo({
-      curve: curves.initCurve(),
-      duration: 4500,
-      delay: 0,
-      iterations: 1,
-      playMode: PlayMode.Normal
-    }, () => {
-      this.planeOffsetX = 500;
-      this.planeOffsetY = -150;
-    });
+    }, AppConstants.SPLASH_DELAY_MS);
   }
 
   onDestroy() {
@@ -80,7 +65,7 @@ struct SplashPage {
             .animation({
               curve: curves.initCurve(),
               iterations: 1,
-              duration: 500,
+              duration: AppConstants.SPLASH_ANIMATION_DURATION,
               playMode: PlayMode.Alternate
             })
             .onAppear(() => {
@@ -90,7 +75,7 @@ struct SplashPage {
       }
       .width('100%')
       .height('100%')
-      .backgroundColor(Color.Black)
+      .backgroundColor($r('app.color.splash_background'))
     }
     .navDestination(this.pageMap)
     .hideTitleBar(true)

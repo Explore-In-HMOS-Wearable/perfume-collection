@@ -7,6 +7,11 @@
     "deviceTypes": [
       "wearable"
     ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.VIBRATE"
+      }
+    ],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",

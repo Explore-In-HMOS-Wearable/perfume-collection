@@ -1,4 +1,5 @@
 import { defaultPerfume, Perfume } from '../model/PerfumeModel';
+import { RouteNames } from '../constants/RouteNames';
 
 @Builder
 export function PerfumeOfTheDayPageBuilder() {
@@ -12,16 +13,14 @@ struct PerfumeOfTheDayPage {
   @State perfume: Perfume = defaultPerfume;
 
   aboutToAppear(): void {
-    // get the parameters
-    this.perfume = this.pathStack.getParamByName('PerfumeOfTheDayPage')[0] as Perfume
+    this.perfume = this.pathStack.getParamByName(RouteNames.PERFUME_OF_THE_DAY_PAGE)[0] as Perfume;
   }
 
   build() {
     NavDestination() {
-
       Column() {
-        Text('💕 Perfume of Today 💕')
-          .fontColor('#333')
+        Text($r('app.string.perfume_of_today_title'))
+          .fontColor($r('app.color.text_primary'))
           .fontSize(15)
           .fontWeight(700)
           .padding({ bottom: 10 })
@@ -33,15 +32,20 @@ struct PerfumeOfTheDayPage {
           .objectFit(ImageFit.Contain)
           .padding({ bottom: 5 })
 
-        Text(this.perfume.name).fontSize(11).fontWeight(FontWeight.Bold).fontColor(Color.Black).padding({ bottom: 2 })
-        Text(this.perfume.category).fontSize(9).fontColor(Color.Black)
+        Text(this.perfume.name)
+          .fontSize(11)
+          .fontWeight(FontWeight.Bold)
+          .fontColor($r('app.color.text_primary'))
+          .padding({ bottom: 2 })
 
+        Text(this.perfume.category)
+          .fontSize(9)
+          .fontColor($r('app.color.text_primary'))
       }
       .justifyContent(FlexAlign.Center)
-      .backgroundColor(Color.Pink)
+      .backgroundColor($r('app.color.perfume_of_day_bg'))
       .width('100%')
       .height('100%')
-
     }
     .hideBackButton(true)
   }

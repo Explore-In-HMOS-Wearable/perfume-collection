@@ -3,6 +3,58 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "page_background",
+      "value": "#ffd4c890"
+    },
+    {
+      "name": "button_background",
+      "value": "#ff8c7b2f"
+    },
+    {
+      "name": "splash_background",
+      "value": "#000000"
+    },
+    {
+      "name": "text_primary",
+      "value": "#333333"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#666666"
+    },
+    {
+      "name": "text_on_dark",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "text_secondary_on_dark",
+      "value": "#CCCCCC"
+    },
+    {
+      "name": "search_bar_bg",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "divider_color",
+      "value": "#808080"
+    },
+    {
+      "name": "perfume_of_day_bg",
+      "value": "#FFC0CB"
+    },
+    {
+      "name": "indicator_active",
+      "value": "#ff8c7b2f"
+    },
+    {
+      "name": "indicator_inactive",
+      "value": "#66FFFFFF"
+    },
+    {
+      "name": "arc_list_item_bg",
+      "value": "#26FFFFFF"
     }
   ]
 }

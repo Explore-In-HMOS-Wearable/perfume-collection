@@ -1,73 +1,86 @@
-> **Note:** To access all shared projects, get information about environment setup, and view other guides, please visit 
-
 # Perfume Collection
 
-This project showcases a sample app for HarmonyOS Next wearables, allowing users to explore and manage their perfume
-collection.
+A HarmonyOS NEXT wearable app for exploring and managing a perfume collection, built with ArkTS, ArkUI.
 
 # Preview
 
 <div>
-<img src="./screenshots/HomePage.png" width="24%"/>
-<img src="./screenshots/PerfumePage.png" width="24%"/>
-<img src="./screenshots/PerfumeDetail.png" width="24%"/>
-<img src="./screenshots/PerfumeOfTheDayPage.png" width="24%"/>
+<img src="./screenshots/s1.png" width="24%"/>
+<img src="./screenshots/s2.png" width="24%"/>
+<img src="./screenshots/s3.png" width="24%"/>
+<img src="./screenshots/s4.png" width="24%"/>
 </div>
 
 # Use Cases
 
-It is a perfume collection app for users who want to see perfume collection. The buttons do not have any functions. This
-project is an UI project.
+1. Splash screen animation on app launch
+2. ArcSwiper-based home menu with three cards: Perfume of the Day, Perfumes, Favorites
+3. Randomly selected Perfume of the Day using secure random number generation
+4. Gender selection via ArcButton (WOMAN / MAN) before browsing the collection
+5. Perfume list with search/filter, favorite toggle, and crown scroll support
+6. Perfume detail page with scrollable description and favorite toggle
+7. Favorites page showing all saved perfumes, refreshed on every visit
+8. Haptic feedback on favorite add/remove via vibration
 
-1) The user can see the splash page when the app opens.
-2) The user can see the perfume of the day
-3) The user can see perfume/deodorant/air freshener collections (dummy data)
-4) The user can see details on the detail page
-5) The user can add them to favorites (no function)
+# Technology
 
-# Tech Stack
+## Stack
+**Language:** ArkTS  
+**Framework:** HarmonyOS SDK 5.0.2 (14)  
+**Tools:** DevEco Studio 5.1.0.240 SP1  
+**Libraries:** @kit.ArkUI, @kit.SensorServiceKit, @kit.CryptoArchitectureKit, @kit.BasicServicesKit
 
-- **Languages**: ArkTS
-- **Frameworks**: HarmonyOS SDK 5.0.2(14)
-- **Tools**: DevEco Studio Vers 5.1.0.240SP1
-- **Libraries**: @kit.ArkUI
+## Required Permissions
+- `ohos.permission.VIBRATE`
+
+**Architecture**
+
+This project follows **MVVM** with a clean layer separation:
+
+- **model** — data interfaces and dummy data (`PerfumeModel`)
+- **viewmodel** — search/filter logic (`PerfumeViewModel`)
+- **service** — favorites management (`PreferencesService`), haptic feedback (`HapticService`)
+- **components** — reusable UI components
+- **pages** — full-screen NavDestination pages
+- **constants** — route names (`RouteNames`), app-wide constants (`AppConstants`)
 
 # Directory Structure
 
-   ```
+```
 entry/src/main/ets/
-|---components
-|---|---ButtonComponent
-|---|---GenderButton
-|---|---PerfumeComponent
-|---|---PerfumeDetailComponent
-|---|---SearchBar
-|---model
-|---|---PerfumeModel
-|---pages
-|---|---ChooseGenderPage
-|---|---FavoritesPage
-|---|---HomePage
-|---|---MenuPage
-|---|---PerfumeDetailPage
-|---|---PerfumeOfTheDayPage
-|---|---PerfumePage
-|---|---SplashPage
-|---viewmodel
-|---|---PerfumeViewModel
-|---entryability
-|---|---EntryAbility
-|---entrybackupability
-|---|---EntryBackupAbility
-   ```
-
+├── constants/
+│   ├── AppConstants.ets
+│   └── RouteNames.ets
+├── model/
+│   └── PerfumeModel.ets
+├── viewmodel/
+│   └── PerfumeViewModel.ets
+├── service/
+│   ├── PreferencesService.ets
+│   └── HapticService.ets
+├── components/
+│   ├── GenderButton.ets
+│   ├── PerfumeComponent.ets
+│   ├── PerfumeDetailComponent.ets
+│   └── SearchBar.ets
+├── pages/
+│   ├── SplashPage.ets
+│   ├── HomePage.ets
+│   ├── ChooseGenderPage.ets
+│   ├── MenuPage.ets
+│   ├── PerfumePage.ets
+│   ├── PerfumeDetailPage.ets
+│   ├── PerfumeOfTheDayPage.ets
+│   └── FavoritesPage.ets
+└── entryability/
+    └── EntryAbility.ets
+```
 # Constraints and Restrictions
+## Supported Device
 
-## Supported Devices
-
-- Huawei Watch 5
+Huawei Watch 5
 
 # License
 
-PerfumeCollection is distributed under the terms of the MIT License
+PerfumeCollection is distributed under the terms of the MIT License.  
 See the [LICENSE](./LICENSE) for more information.

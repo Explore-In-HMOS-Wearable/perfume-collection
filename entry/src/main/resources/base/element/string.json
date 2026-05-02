@@ -2,19 +2,75 @@
   "string": [
     {
       "name": "module_desc",
-      "value": "module description"
+      "value": "Perfume Collection Module"
     },
     {
       "name": "EntryAbility_desc",
-      "value": "description"
+      "value": "Perfume Collection App"
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "Perfume Collection"
     },
     {
       "name": "search",
       "value": "Search for perfume"
+    },
+    {
+      "name": "perfume_of_the_day",
+      "value": "Perfume of the Day"
+    },
+    {
+      "name": "perfume_of_the_day_desc",
+      "value": "Discover your daily scent"
+    },
+    {
+      "name": "perfumes",
+      "value": "Perfumes"
+    },
+    {
+      "name": "perfumes_desc",
+      "value": "Browse the collection"
+    },
+    {
+      "name": "favorites",
+      "value": "Favorites"
+    },
+    {
+      "name": "favorites_desc",
+      "value": "Your saved scents"
+    },
+    {
+      "name": "no_favorites",
+      "value": "No favorites yet.\nTap the heart icon to add perfumes."
+    },
+    {
+      "name": "perfume_of_today_title",
+      "value": "💕 Perfume of Today 💕"
+    },
+    {
+      "name": "woman",
+      "value": "WOMAN"
+    },
+    {
+      "name": "man",
+      "value": "MAN"
+    },
+    {
+      "name": "category_perfume",
+      "value": "Perfume"
+    },
+    {
+      "name": "category_deodorant",
+      "value": "Deodorant"
+    },
+    {
+      "name": "category_air_freshener",
+      "value": "Air Freshener"
+    },
+    {
+      "name": "unknown_route",
+      "value": "Unknown route"
     }
   ]
 }
